@@ -1,4 +1,10 @@
 import brainWaves from '../images/home/brain-waves.png';
+import carlJung from '../images/home/carl-jung.jpg';
+import cow2 from '../images/home/cow-2.jpg';
+import dreamYoga from '../images/home/Dream-Yoga.jpg';
+import lucidDreaming from '../images/home/lucid-dreaming.jpg';
+import sigmundFreud from '../images/home/sigmund-freud.jpg';
+import ivanNastovic from '../images/home/snovi-ivan-nastovic.jpg';
 
 const images = [
     {
@@ -9,37 +15,37 @@ const images = [
     },
     {
         id: 'i2',
-        photo: brainWaves,
+        photo: carlJung,
         link: 'https://en.wikipedia.org/wiki/Carl_Jung',
         altText: 'Carl Jung'
     },
     {
         id: 'i3',
-        photo: brainWaves,
+        photo: cow2,
         link: '#',
         altText: 'cow'
     },
     {
         id: 'i4',
-        photo: brainWaves,
+        photo: dreamYoga,
         link: 'https://www.amazon.com/Tibetan-Yogas-Dream-Sleep/dp/1559391014/ref=sr_1_1?crid=KTMFAQUARF1N&dchild=1&qid=1616426581',
         altText: 'Dream Yoga'
     },
     {
         id: 'i5',
-        photo: brainWaves,
+        photo: lucidDreaming,
         link: 'https://tothestars.media/blogs/news/the-science-behind-lucid-dreaming',
         altText: 'lucid dreaming'
     },
     {
         id: 'i6',
-        photo: brainWaves,
+        photo: sigmundFreud,
         link: 'https://en.wikipedia.org/wiki/Sigmund_Freud',
         altText: 'Sigmund Freud'
     },
     {
         id: 'i7',
-        photo: brainWaves,
+        photo: ivanNastovic,
         link: 'http://ivannastovic.com/-Biografije/Biografija-Ivan-Nastovic/',
         altText: 'Ivan Nastovic'
     }
