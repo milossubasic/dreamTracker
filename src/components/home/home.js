@@ -2,7 +2,7 @@ import React from 'react';
 
 import Images from './images';
 
-const Home = ({imagesArray}) => {
+const Home = ({ imagesArray }) => {
     return ( 
         <div className='container__images'>
             {imagesArray.map(image => {
@@ -11,6 +11,6 @@ const Home = ({imagesArray}) => {
             }
         </div>
      );
-}
+};
  
 export default Home;
