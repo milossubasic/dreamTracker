@@ -1,19 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Images = ({ imageData }) => {
 
-    const {photo, altText} = imageData;
+    const {id, photo, link, altText} = imageData;
+    const cssClass = `container__image container__image--${id}`
     return ( 
-        <img src={photo} alt={altText}/>
+        <a href={link}>
+            <img 
+                src={photo} 
+                alt={altText}
+                className={cssClass}/>
+        </a>
      );
-};
-
-Images.propTypes = {
-    imageData: PropTypes.shape({
-        photo: PropTypes.any.isRequired,
-        altText: PropTypes.string.isRequired
-    })
 };
  
 export default Images;
