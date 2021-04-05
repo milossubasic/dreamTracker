@@ -1,4 +1,5 @@
 @import './styles/colors.scss';
+@import './styles/dimensions.scss';
 
 * {
   margin: 0;
@@ -20,6 +21,13 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-color: $shark;
+}
+
+.container {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
 }
 
 /* code {
