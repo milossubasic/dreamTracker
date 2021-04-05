@@ -5,14 +5,16 @@ import Feature from './feature';
 
 const FeaturesSection = ({ heading, features }) => {
     return (
-        <>
-            <h3>{heading}</h3>
-            <ul>
-                {features.map( feature => {
-                    return <Feature key={feature.id} featureData={feature} />;
-                })}
-            </ul>
-        </> 
+        <section>
+            <div className='container'>
+                <h3>{heading}</h3>
+                <ul>
+                    {features.map( feature => {
+                        return <Feature key={feature.id} featureData={feature} />;
+                    })}
+                </ul>
+            </div>
+        </section> 
 
     );
 };
