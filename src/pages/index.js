@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+//import Layout from '../components/layout';
 import Header from '../components/header/header';
 import ImagesSection from '../components/home/images-section/images-section';
 import FeaturesSection from '../components/home/features-section/features-section';
@@ -11,7 +11,7 @@ const Index = () => {
     const { headContent, images, featureHeading, featuresData } = dataHome;
 
     return ( 
-        <Layout>
+        <>
             <Header content={headContent}/>
             <ImagesSection imagesArray={images}/>
             <FeaturesSection heading={featureHeading} features={featuresData} />
@@ -25,7 +25,7 @@ const Index = () => {
                     <Features features={featuresData} heading={featureHeading}/>
                 </div>
             </div> */}
-        </Layout>
+        </>
      );
 };
  
