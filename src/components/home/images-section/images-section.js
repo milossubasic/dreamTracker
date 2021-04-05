@@ -7,7 +7,7 @@ import Image from './image';
 const ImagesSection = ({ imagesArray }) => {
     return ( 
         <section>
-            <div classname='container'>
+            <div className='container'>
                 <div className='container__images'>
                     {imagesArray.map(image => {
                         return <Image key={image.id} imageData={image}/>;
