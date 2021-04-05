@@ -3,7 +3,7 @@ import './app.scss';
 import dataHome from './data/data-home';
 
 import Home from './components/home/home';
-import Features from './components/home/features';
+import Features from './components/home/features-section/features-section';
 
 const App = () => {
   const { images, featuresData, featureHeading } = dataHome;

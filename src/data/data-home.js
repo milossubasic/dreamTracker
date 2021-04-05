@@ -7,6 +7,10 @@ import sigmundFreud from '../images/home/sigmund-freud.jpg';
 import ivanNastovic from '../images/home/snovi-ivan-nastovic.jpg';
 
 const home = {
+    headContent: {
+        title: 'Welcome to the dreamsApp!',
+        subTitle: 'Dreams can tell us A LOT about ourselves - as famously Froyd once put it: "Dreams are a royal highway to unconscious". They can guide us, they can warn us - predict'
+    },
     images: [
         {
             id: 'i1',
@@ -51,6 +55,7 @@ const home = {
             altText: 'Ivan Nastovic'
         }
     ],
+    featureHeading: 'This is the place where you can keep track of your dreams, and it can be valueble tool in your wish to make some sense of them!',
     featuresData: [
         {
             id: 'f1',
@@ -72,8 +77,7 @@ const home = {
             id: 'f5',
             feature: 'Import a batch of your older dreams'
         },
-    ],
-    featureHeading: 'This is the place where you can keep track of your dreams, and it can be valueble tool in your wish to make some sense of them!'
+    ]
 };
 
 export default home;
