@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Navigation from './navigation/navigation';
+
 //import "../styles/style.scss";
 
 //import Footer from "./footer/footer";
@@ -8,6 +10,7 @@ import PropTypes from "prop-types";
 const Layout = ({ children }) => {
   return (
     <>
+      <Navigation />
       <main>{children}</main>
       {/* <Footer /> */}
     </>
