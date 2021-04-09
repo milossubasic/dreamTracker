@@ -1,7 +1,7 @@
 import React from 'react';
 
 //import Layout from '../components/layout';
-import Header from '../components/header/header';
+import Header from '../components/layout/header/header';
 import ImagesSection from '../components/home/images-section/images-section';
 import FeaturesSection from '../components/home/features-section/features-section';
 
