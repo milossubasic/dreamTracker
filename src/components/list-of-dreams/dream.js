@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Dream = ({ dreamData }) => {
-    console.log(dreamData);
     const { content, fullDate, title } = dreamData;
     return (
         <div>
