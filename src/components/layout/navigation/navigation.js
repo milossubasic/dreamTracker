@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './navigation.scss';
-import menuLinks from '../../../config/globals/routes';
 
 import LogoLink from '../../logo-link';
 import NavBar from './nav-bar';
@@ -12,7 +11,7 @@ const Navigation = () => {
             <div className='container'>
                 <nav className='navigation'>
                     <LogoLink />
-                    <NavBar links={menuLinks} />
+                    <NavBar />
                 </nav>
             </div>
         </header>

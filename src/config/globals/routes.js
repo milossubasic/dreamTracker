@@ -1,6 +1,8 @@
 const routes = [
-    {name: 'Login', link: '/login'},
-    {name: 'Something', link: '/something'}
+    {name: 'Home', path: '/'},
+    {name: 'Login', path: '/login'},
+    {name: 'Something', path: '/something'},
+    {name: 'Dreams', path: '/list-of-dreams'}
 ];
 
 export default routes;
