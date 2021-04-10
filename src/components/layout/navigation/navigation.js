@@ -8,12 +8,14 @@ import NavBar from './nav-bar';
 
 const Navigation = () => {
     return (
-        <div className='container'>
-            <nav className='navigation'>
-                <LogoLink />
-                <NavBar links={menuLinks} />
-            </nav>
-        </div>
+        <header>
+            <div className='container'>
+                <nav className='navigation'>
+                    <LogoLink />
+                    <NavBar links={menuLinks} />
+                </nav>
+            </div>
+        </header>
     );
 }
  
