@@ -1,0 +1,21 @@
+.list-section {
+    &__list {
+        list-style: none;
+    }
+    &__dream {
+        display: flex;
+    }
+    &__date-of-dream {
+        display: flex;
+        width: 150px;
+    }
+    &__day {
+    
+    }
+    &__date {
+        padding-left: 5px;
+    }
+    &__description {
+
+    }
+}

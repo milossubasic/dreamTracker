@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import fetchDreams from '../../Adapters/axios/axios-fetch-dreams';
 import repackingFetchedDreams from '../../helpers/repacking-fetched-dreams';
 
+import './list-section.scss';
+
 import Dream from './dream';
 
 class ListSection extends Component {
@@ -26,12 +28,16 @@ class ListSection extends Component {
 
     render() {
         const conditionalDreamsRendering = this.state.listOfDreams && this.state.listOfDreams.length > 0 ?
-                                           this.state.listOfDreams.map(dream => <Dream key={dream.id} dreamData={dream}/>) :
+                                           this.state.listOfDreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
                                            <div>Loading baby...</div>;   
         return (
-            <div className='container'>
-                {conditionalDreamsRendering}
-            </div> 
+            <section className='list-section'>
+                <div className='container'>
+                    <ul className='list-section__list'>
+                        {conditionalDreamsRendering}
+                    </ul>
+                </div> 
+            </section>
          );
     };
 };
