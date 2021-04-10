@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import fetchDreams from '../Adapters/axios/axios-fetch-dreams';
 import repackingFetchedDreams from '../helpers/repacking-fetched-dreams';
 
+import Heading from '../components/layout/heading/heading';
 import Dream from '../components/list-of-dreams/dream';
+
+import dataListOfDreams from '../data/data-list-of-dreams';
 
 class ListOfDreams extends Component {
     state = { 
@@ -30,9 +33,8 @@ class ListOfDreams extends Component {
                                            <div>Loading baby...</div>;   
         return (
             <>
-                <h3>These are your dreams mate</h3>
+                <Heading content={dataListOfDreams.headContent} />
                 {conditionalDreamsRendering}
-                {/* <div>Hello my baby hello my honey!</div> */}
             </> 
          );
     };

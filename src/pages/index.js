@@ -1,7 +1,7 @@
 import React from 'react';
 
 //import Layout from '../components/layout';
-import Header from '../components/layout/header/header';
+import Heading from '../components/layout/heading/heading';
 import ImagesSection from '../components/home/images-section/images-section';
 import FeaturesSection from '../components/home/features-section/features-section';
 
@@ -12,7 +12,7 @@ const Index = () => {
 
     return ( 
         <>
-            <Header content={headContent}/>
+            <Heading content={headContent}/>
             <ImagesSection imagesArray={images}/>
             <FeaturesSection heading={featureHeading} features={featuresData} />
             {/* <div>

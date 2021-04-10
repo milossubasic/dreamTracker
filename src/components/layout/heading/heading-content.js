@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HeaderContent = ({ content }) => {
+const HeadingContent = ({ content }) => {
     const { title, subTitle} = content;
     return (
         <div className='content'>
@@ -11,11 +11,11 @@ const HeaderContent = ({ content }) => {
     );
 };
 
-HeaderContent.propTypes = {
+HeadingContent.propTypes = {
     content: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      subTitle: PropTypes.string.isRequired
+      title: PropTypes.string,
+      subTitle: PropTypes.string
     })
   };
  
-export default HeaderContent;
+export default HeadingContent;
