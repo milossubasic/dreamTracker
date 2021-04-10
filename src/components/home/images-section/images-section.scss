@@ -1,6 +1,6 @@
 @import '../../../styles/colors';
 
-.container__images {
+.images-section {
     position: relative;
     width: 600px;
     height: 450px;
@@ -9,7 +9,7 @@
     &:hover .container__image:not(:hover){
         transform: scale(0.9);
     }
-    .container__image {
+    &__image {
         position: absolute;
         width: 200px;
         border-radius: 2px;

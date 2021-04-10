@@ -9,7 +9,7 @@ const Image = ({ imageData }) => {
             <img 
                 src={photo} 
                 alt={altText}
-                className={`container__image container__image--${id}`}/>
+                className={`images-section__image images-section__image--${id}`}/>
         </a>
      );
 };
