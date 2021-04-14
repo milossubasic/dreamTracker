@@ -1,7 +1,11 @@
 import React from 'react';
 
 const LogoLink = () => {
-    return ( <div>LogoLink</div> );
+    return (
+        <svg>
+            <use xlink:href='../images/logo/Klein_bottle.svg' />
+        </svg>
+    );
 }
  
 export default LogoLink;
