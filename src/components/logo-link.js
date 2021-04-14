@@ -1,10 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import logo from '../images/logo/Klein_bottle.svg';
 
 const LogoLink = () => {
     return (
-        <svg>
-            <use xlink:href='../images/logo/Klein_bottle.svg' />
-        </svg>
+        <NavLink to='/'>
+            <img src={logo} alt='Logo' className='navigation__logo'/>
+        </NavLink>
     );
 }
  
