@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import fetchDreams from '../../Adapters/axios/axios-fetch-dreams';
-// import repackingFetchedDreams from '../../helpers/repacking-fetched-dreams';
+
 import * as actionCreator from '../../store/actions/actionCreators';
 import { connect } from 'react-redux';
 
@@ -9,11 +8,6 @@ import './list-section.scss';
 import Dream from './dream';
 
 class ListSection extends Component {
-    state = { 
-        listOfDreams: null,
-        loading: false,
-        error: null
-     };
 
     componentDidMount() {
         this.props.onDidMount();
@@ -24,7 +18,7 @@ class ListSection extends Component {
         this.props.error ? <p>{this.props.error}</p> :
             this.props.dreams && this.props.dreams.length > 0 ?
                this.props.dreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
-               <div>No Dreams to show</div>;   
+               <div>No dreams to show</div>;   
         return (
             <section className='list-section'>
                 <div className='container'>
