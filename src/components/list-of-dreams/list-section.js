@@ -17,25 +17,14 @@ class ListSection extends Component {
 
     componentDidMount() {
         this.props.onDidMount();
-        // this.setState({loading: true});
-        // fetchDreams.get()
-        // .then ( response => {
-        //     const dreamsArray = repackingFetchedDreams(response.data);
-        //     this.setState({
-        //         listOfDreams: dreamsArray,
-        //         loading: false
-        //     })
-        // })
-        // .catch (  error => console.log(error))
     };
 
     render() {
         const conditionalDreamsRendering = this.props.loading ? <p>Loading...</p> :
         this.props.error ? <p>{this.props.error}</p> :
             this.props.dreams && this.props.dreams.length > 0 ?
-               this.state.listOfDreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
+               this.props.dreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
                <div>No Dreams to show</div>;   
-
         return (
             <section className='list-section'>
                 <div className='container'>

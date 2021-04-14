@@ -1,23 +1,23 @@
-import * as actions from './action.types';
+import * as actions from './action-types';
 import axiosFetchDreams from '../../Adapters/axios/axios-fetch-dreams';
 import repackingFetchedDreams from '../../helpers/repacking-fetched-dreams';
 
 const dreams_fetching_start = () => {
     return {
-        action: actions.DREAMS_FETCHING_START
+        type: actions.DREAMS_FETCHING_START
     };
 };
 
 const dreams_fetching_success = (fetchedDreams) => {
     return {
-        action: actions.DREAMS_FETCHING_SUCCESS,
+        type: actions.DREAMS_FETCHING_SUCCESS,
         dreams: fetchedDreams
     };
 };
 
 const dreams_fetching_error = (error) => {
     return {
-        action: actions.DREAMS_FETCHING_SUCCESS,
+        type: actions.DREAMS_FETCHING_SUCCESS,
         dreams: error
     };
 };

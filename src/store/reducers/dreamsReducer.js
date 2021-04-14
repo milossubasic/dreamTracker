@@ -1,4 +1,4 @@
-import * as actions from '../actions/action.types';
+import * as actions from '../actions/action-types';
 
 const initialState = {
     dreams: [],
