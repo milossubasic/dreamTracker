@@ -18,7 +18,8 @@ class ListSection extends Component {
         this.props.error ? <p>{this.props.error}</p> :
             this.props.dreams && this.props.dreams.length > 0 ?
                this.props.dreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
-               <div>No dreams to show</div>;   
+               <div>No dreams to show</div>;
+
         return (
             <section className='list-section'>
                 <div className='container'>
