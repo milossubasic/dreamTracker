@@ -22,6 +22,7 @@ const dreamsReducer = ( state=initialState, action ) => {
         case actions.DREAMS_FETCHING_ERROR:
             return {
                 ...state,
+                loading: false,
                 error: action.error
             };
     

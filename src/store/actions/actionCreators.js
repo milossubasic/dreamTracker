@@ -15,10 +15,10 @@ const dreams_fetching_success = (fetchedDreams) => {
     };
 };
 
-const dreams_fetching_error = (error) => {
+const dreams_fetching_error = (receivedError) => {
     return {
-        type: actions.DREAMS_FETCHING_SUCCESS,
-        dreams: error
+        type: actions.DREAMS_FETCHING_ERROR,
+        error: receivedError
     };
 };
 
@@ -30,6 +30,6 @@ export const dreams_fetching = () => {
             const dreamsArray = repackingFetchedDreams(response.data);
             dispatch(dreams_fetching_success(dreamsArray));
         })
-        .catch (  error => dispatch(dreams_fetching_error(error)) )
+        .catch (  error => dispatch(dreams_fetching_error(error.message)) )
     };
 };
