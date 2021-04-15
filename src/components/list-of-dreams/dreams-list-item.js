@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Dream = ({ dreamData }) => {
+const DreamsListItem = ({ dreamData }) => {
     const { description, fullDate} = dreamData;
     return (
-        <div className='list-section__dream'>
-            <div className='list-section__date-of-dream'>
-                <div className='list-section__day'>{fullDate.day},</div>
-                <div className='list-section__date'>{fullDate.date}.</div>
+        <div className='dreams-list-section__dream'>
+            <div className='dreams-list-section__date-of-dream'>
+                <div className='dreams-list-section__day'>{fullDate.day},</div>
+                <div className='dreams-list-section__date'>{fullDate.date}.</div>
             </div>
-            <div className='list-section__description'>{description}</div>
+            <div className='dreams-list-section__description'>{description}</div>
         </div>
     );
 };
 
-Dream.propTypes = {
+DreamsListItem.propTypes = {
     dreamData: PropTypes.shape ({
         id: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
@@ -26,4 +26,4 @@ Dream.propTypes = {
     })
 }
  
-export default Dream;
+export default DreamsListItem;

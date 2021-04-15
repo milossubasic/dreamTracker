@@ -3,7 +3,8 @@ import * as actions from '../actions/action-types';
 const initialState = {
     dreams: [],
     loading: false,
-    error: null
+    error: null,
+    activeDream: null
 };
 
 const dreamsReducer = ( state=initialState, action ) => {
