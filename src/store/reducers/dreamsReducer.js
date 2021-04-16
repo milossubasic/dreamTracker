@@ -26,6 +26,12 @@ const dreamsReducer = ( state=initialState, action ) => {
                 loading: false,
                 error: action.error
             };
+        case actions.MAKE_DREAM_ACTIVE:
+            const neededDream = state.dreams.find( dream => dream.id === action.dreamID );
+            return {
+                ...state,
+                activeDream: neededDream
+            };
     
         default:
             return state;

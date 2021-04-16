@@ -33,3 +33,10 @@ export const dreams_fetching = () => {
         .catch (  error => dispatch(dreams_fetching_error(error.message)) )
     };
 };
+
+export const make_dream_active = (sentDreamID) => {
+    return {
+        type: actions.MAKE_DREAM_ACTIVE,
+        dreamID: sentDreamID
+    };
+};
