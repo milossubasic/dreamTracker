@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import * as actionCreator from '../../store/actions/actionCreators';
 import { connect } from 'react-redux';
 
-import './list-section.scss';
+import './dreams-list-section.scss';
 
-import Dream from './dream';
+import DreamListItem from './dreams-list-item';
 
-class ListSection extends Component {
+class DreamListSection extends Component {
 
     componentDidMount() {
         this.props.onDidMount();
@@ -17,12 +17,13 @@ class ListSection extends Component {
         const conditionalDreamsRendering = this.props.loading ? <p>Loading...</p> :
         this.props.error ? <p>{this.props.error}</p> :
             this.props.dreams && this.props.dreams.length > 0 ?
-               this.props.dreams.map(dream => <li key={dream.id}><Dream dreamData={dream} /></li>) :
-               <div>No dreams to show</div>;   
+               this.props.dreams.map(dream => <li key={dream.id}><DreamListItem dreamData={dream} /></li>) :
+               <div>No dreams to show</div>;
+
         return (
-            <section className='list-section'>
+            <section className='dreams-list-section'>
                 <div className='container'>
-                    <ul className='list-section__list'>
+                    <ul className='dreams-list-section__list'>
                         {conditionalDreamsRendering}
                     </ul>
                 </div> 
@@ -45,4 +46,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
  
-export default connect(mapStateToProps, mapDispatchToProps)(ListSection);
+export default connect(mapStateToProps, mapDispatchToProps)(DreamListSection);
