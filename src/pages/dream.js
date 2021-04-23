@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import dreamPropType from '../helpers/dream-prop-type';
 
 import DreamSection from '../components/dream/dream-section/dream-section';
@@ -9,7 +8,7 @@ import DreamNavigation from '../components/dream/dream-navigation/dream-navigati
 const Dream = ({ theDream }) => {
     return (
         <>
-            <DreamSection dream={theDream}/>
+            <DreamSection theDream={theDream}/>
             <DreamNavigation />
         </>
     );
