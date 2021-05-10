@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 import repackingSelectDate from '../../helpers/repacking-select-date';
 
 import Button from '../UI/button/button';
-import SelectElement from './select-element';
-import InputElement from './input-element';
+import FormControl from './form-control';
 
-const EnterNewDreamSection = ({ inputElements, selectElements }) => {
-    const { daysOfMonth, months, days } = selectElements;
+const EnterNewDreamSection = ({ formControlsArray }) => {
 
     // this helper returns array with numbers from 1 to 31
     // I will make this a real date object, but I am not interested in doing this now
-    const selectDate = repackingSelectDate(daysOfMonth);
+    const selectDate = repackingSelectDate(formControlsArray[3].numberOfDays);
+    // now I'm gonna set this array as value of 'names' property of the first object, so it can be 
+    // rendered as regular selectElement array member
+    formControlsArray[3].names = selectDate;
 
     const newDreamPackage = {
         content: '',
@@ -26,8 +27,12 @@ const EnterNewDreamSection = ({ inputElements, selectElements }) => {
         }
     };
 
-    const inputValueHandler = (id, value) => {
-        newDreamPackage[id] = value;
+    const inputValueHandler = (id, value, selectInput) => {
+        if (selectInput) {
+            newDreamPackage.fullDate[id] = value;
+        } else {
+            newDreamPackage[id] = value;
+        }
     }
 
     // const [ inputTest, setInputTest ] = useState('');
@@ -66,13 +71,8 @@ const EnterNewDreamSection = ({ inputElements, selectElements }) => {
         <section className='END-section'>
             <div className='container'>
                 <form onSubmit={formSubmissionHandler}>
-                    <div className='form-control'>
-                        <div>
-                            {/* <SelectElement arrayForOutput={selectDate} passInputValue={inputValueHandler}/>
-                            <SelectElement arrayForOutput={months} passInputValue={inputValueHandler}/>
-                            <SelectElement arrayForOutput={days} passInputValue={inputValueHandler}/> */}
-                        </div>
-                        {inputElements.map(el => <InputElement key={el.id} elementData={el} passInputValue={inputValueHandler}/>)}
+                    <div className='form-controls'>
+                        {formControlsArray.map(el => <FormControl key={el.id} elementData={el} passInputValue={inputValueHandler}/>)}
                     </div>
                     <div className='form-actions'>
                         <Button>Submit new dream</Button>
@@ -83,38 +83,26 @@ const EnterNewDreamSection = ({ inputElements, selectElements }) => {
     );
 };
 
-EnterNewDreamSection.propTypes = {
-    inputElements: PropTypes.arrayOf (
-        PropTypes.shape({
-            inputType: PropTypes.string.isRequired,
-            id: PropTypes.string.isRequired,
-            forLabel: PropTypes.string.isRequired
-        })
-    ),
-    selectElements: PropTypes.arrayOf (
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            numberOfDays: PropTypes.number.isRequired
-        }),
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            names: PropTypes.arrayOf (
-                PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                    value: PropTypes.string.isRequired
-                })
-            )
-        }),
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            names: PropTypes.arrayOf (
-                PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                    value: PropTypes.string.isRequired
-                })
-            )
-        })
-    )
-};
+// EnterNewDreamSection.propTypes = {
+//     inputElements: PropTypes.arrayOf (
+//         PropTypes.shape({
+//             inputType: PropTypes.string.isRequired,
+//             id: PropTypes.string.isRequired,
+//             forLabel: PropTypes.string.isRequired
+//         })
+//     ).isRequired,
+//     selectElements: PropTypes.arrayOf (
+//         PropTypes.shape({
+//             id: PropTypes.string.isRequired,
+//             names: PropTypes.arrayOf (
+//                 PropTypes.shape({
+//                     id: PropTypes.string.isRequired,
+//                     value: PropTypes.string.isRequired
+//                 })
+//             ),
+//             numberOfDays: PropTypes.number
+//         })
+//     ).isRequired
+// };
  
 export default EnterNewDreamSection;

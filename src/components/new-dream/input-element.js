@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const InputElement = ({ elementData, passInputValue }) => {
     const { inputType, id, forLabel } = elementData;
 
-    const inputRef=useRef();
+    const inputRef = useRef();
 
     const inputChangeHandler = () => {
         passInputValue(id, inputRef.current.value);

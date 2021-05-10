@@ -3,7 +3,7 @@ const newDream = {
     headContent: {
         subTitle: 'Hooray, you had a new downfall!'
     },
-    inputElements: [
+    formControls: [
         {
             inputType: 'text',
             id: 'title',
@@ -18,14 +18,21 @@ const newDream = {
             inputType: 'text',
             id: 'content',
             forLabel: 'Enter the story of the dream'
-        }
-    ],
-    selectElements: [
-        {   id: 'daysOfMonth',
-            numberOfDays: 31
+        },
+        {   
+            inputType: 'select',
+            id: 'date',
+            numberOfDays: 31,
+            names: [
+                {
+                    id: '',
+                    value: ''
+                }
+            ]
         },
         {
-            id: 'months',
+            inputType: 'select',
+            id: 'month',
             names: [
                 {
                     id: 'mID1',
@@ -78,7 +85,8 @@ const newDream = {
             ]
         },
         {
-            id: 'daysOfWeek',
+            inputType: 'select',
+            id: 'day',
             names: [
                 {
                     id: 'dID1',

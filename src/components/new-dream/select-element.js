@@ -1,26 +1,29 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-// const SelectElement = ({ arrayForOutput, passInputValue }) => {
+const SelectElement = ({ elementData, passInputValue }) => {
+    const { id, names } = elementData;
 
-//     const inputChangeHandler = () => {
-//         //passInputValue(id, inputRef.current.value);
-//     };
+    const selectRef = useRef();
 
-//     return (
-//         <select onChange={inputChangeHandler}>
-//             {arrayForOutput.map(element => <option key={element.id}>{element.value}</option>)}
-//         </select>
-//     );
-// };
+    const inputChangeHandler = () => {
+        passInputValue(id, selectRef.current.value, true);
+    };
 
-// SelectElement.propTypes = {
-//     arrayForOutput: PropTypes.arrayOf(
-//         PropTypes.shape({
-//                 id: PropTypes.string.isRequired,
-//                 value: PropTypes.string.isRequired
-//             })
-//     )
-// };
+    return (
+        <select ref={selectRef} onChange={inputChangeHandler}>
+            {names.map(element => <option key={element.id} value={element.value} >{element.value}</option>)}
+        </select>
+    );
+};
+
+SelectElement.propTypes = {
+    arrayForOutput: PropTypes.arrayOf(
+        PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                value: PropTypes.string.isRequired
+            })
+    )
+};
  
-// export default SelectElement;
+export default SelectElement;
