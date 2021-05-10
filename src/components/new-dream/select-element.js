@@ -1,22 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import PropTypes from 'prop-types';
 
-const SelectElement = ({ arrayForOutput }) => {
+// const SelectElement = ({ arrayForOutput, passInputValue }) => {
 
-    return (
-        <select>
-            {arrayForOutput.map(element => <option key={element.id}>{element.value}</option>)}
-        </select>
-    );
-};
+//     const inputChangeHandler = () => {
+//         //passInputValue(id, inputRef.current.value);
+//     };
 
-SelectElement.propTypes = {
-    arrayForOutput: PropTypes.arrayOf(
-        PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                value: PropTypes.string.isRequired
-            })
-    )
-};
+//     return (
+//         <select onChange={inputChangeHandler}>
+//             {arrayForOutput.map(element => <option key={element.id}>{element.value}</option>)}
+//         </select>
+//     );
+// };
+
+// SelectElement.propTypes = {
+//     arrayForOutput: PropTypes.arrayOf(
+//         PropTypes.shape({
+//                 id: PropTypes.string.isRequired,
+//                 value: PropTypes.string.isRequired
+//             })
+//     )
+// };
  
-export default SelectElement;
+// export default SelectElement;

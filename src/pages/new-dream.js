@@ -6,11 +6,11 @@ import EnterNewDreamSection from '../components/new-dream/enter-new-dream-sectio
 import dataNewDream from '../data/data-new-dream';
 
 const NewDream = () => {
-    const { headContent, selectElements } = dataNewDream;
+    const { headContent, selectElements, inputElements } = dataNewDream;
     return (
         <> 
             <Heading content={headContent}/>
-            <EnterNewDreamSection selectElements={selectElements}/>
+            <EnterNewDreamSection selectElements={selectElements} inputElements={inputElements}/>
         </>
      );
 }
