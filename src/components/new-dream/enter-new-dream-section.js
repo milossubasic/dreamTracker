@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import axios from '../../Adapters/axios/axios-fetch-dreams';
+import axios from '../../Adapters/axios/axios-fetch-dreams';
 
 import repackingSelectDate from '../../helpers/repacking-select-date';
 
@@ -64,7 +64,7 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
     const formSubmissionHandler = event => {
         event.preventDefault();
         console.log(newDreamPackage);
-        //axios.post(package);
+        axios.post('https://react-dreamstracker-default-rtdb.firebaseio.com/dreams.json', newDreamPackage);
     };
 
     return (
