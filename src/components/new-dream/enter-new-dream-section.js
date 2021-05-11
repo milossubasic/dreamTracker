@@ -21,9 +21,9 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
         description: '',
         title: '',
         fullDate: {
-            date: -1,
-            day: '',
-            month: ''
+            date: formControlsArray[3].names[0].value,
+            day: formControlsArray[4].names[0].value,
+            month: formControlsArray[5].names[0].value
         }
     };
 
