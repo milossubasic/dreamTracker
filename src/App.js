@@ -7,6 +7,7 @@ import Index from './pages/index';
 import Login from './pages/login';
 import ListOfDreams from './pages/list-of-dreams';
 import Dream from './pages/dream';
+import NewDream from './pages/new-dream';
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
       <Route path='/login' component={Login} />
       <Route path='/list-of-dreams' component={ListOfDreams} />
       <Route path='/dream' component={Dream} />
+      <Route path='/new-dream' component={NewDream} />
     </Layout>
     );
 };
