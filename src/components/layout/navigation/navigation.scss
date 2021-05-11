@@ -1,30 +1,42 @@
 @import '../../../styles/colors.scss';
+@import '../../../styles/dimensions.scss';
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &__logo {
-        height: 50px;
-    }
-    &__list {
-        list-style: none;
+header{
+    .navigation {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: $padding-nav;
+        &__logo {
+            height: 50px;
+        }
+        &__list {
+            list-style: none;
+            display: flex;
+        }
+        &__item {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            a:hover,
+            a:active,
+            a.current {
+                color: $white;
+            }
+        }
     }
-    &__item {
-        &:not(:last-child) {
-            margin-right: 20px;
+    @media (max-width: $small-screen-size) {
+        .container {
+            padding: 0 $margin-mobile;
+          }
+    }
+    @media (min-width: $medium-screen-size) and (max-width: $desktop-screen-size) {
+        .container {
+          padding: 0 $margin-tablet;
         }
-        a {
-            color: inherit;
-            text-decoration: none;
-
-        }
-        a:hover,
-        a:active,
-        a.current {
-            color: $white;
-        }
-
     }
 }
