@@ -1,7 +1,7 @@
 @import '../../../styles/colors.scss';
 @import '../../../styles/dimensions.scss';
 
-header{
+header {
     .navigation {
         display: flex;
         justify-content: space-between;
@@ -33,6 +33,11 @@ header{
         .container {
             padding: 0 $margin-mobile;
           }
+        .navigation {
+            &__list {
+              display: none;
+          }
+        }
     }
     @media (min-width: $medium-screen-size) and (max-width: $desktop-screen-size) {
         .container {
