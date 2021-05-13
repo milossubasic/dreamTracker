@@ -5,9 +5,6 @@
     &__hamburger {
         display: none;
     }
-    &__checkbox {
-        display: none;
-    }
     &__button {
         position: fixed;
         top: 15px;
@@ -75,10 +72,10 @@
             }
         }
     }
-    &__checkbox:checked ~ &__background {
+    .open &__background {
         transform: scale(80);
     }
-    &__checkbox:checked ~ &__hamburger-items {
+    .open &__hamburger-items {
         width: 100vw;
         opacity: 1;
     }
@@ -114,7 +111,7 @@
             top: 12px;
         }
     }
-    &__checkbox:checked + &__button &__icon {
+    .open &__button &__icon {
         & {
             background-color: transparent;
         }

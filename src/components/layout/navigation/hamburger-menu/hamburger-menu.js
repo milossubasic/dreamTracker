@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './hamburger-menu.scss';
 
 import NavBar from '../nav-bar';
 
 const HambrugerMenu = () => {
+    const [open, setOpen] = useState(false);
     return (
-        <div className='navigation__hamburger'>
-            <input type='checkbox' id='menu' className='navigation__checkbox'/>
-            <label htmlFor='menu' className='navigation__button'>
+        <div 
+        className={`navigation__hamburger ${open ? 'open' : ''}`}
+        onClick={() => setOpen(!open)}>
+            <div className='navigation__button'>
                 <span className='navigation__icon'>&nbsp;</span>
-            </label>
+            </div>
             <div className='navigation__background'/>
             <nav className='navigation__hamburger-items'>
                 <NavBar />
