@@ -4,6 +4,7 @@ import './navigation.scss';
 
 import LogoLink from '../../logo-link';
 import NavBar from './nav-bar';
+import HamburgerMenu from './hamburger-menu/hamburger-menu';
 
 const Navigation = () => {
     return (
@@ -12,6 +13,7 @@ const Navigation = () => {
                 <nav className='navigation'>
                     <LogoLink />
                     <NavBar />
+                    <HamburgerMenu />
                 </nav>
             </div>
         </header>
