@@ -30,9 +30,6 @@ header {
         }
     }
     @media (max-width: $small-screen-size) {
-        .container {
-            padding: 0 $margin-mobile;
-          }
         .navigation {
             &__list {
               display: none;
@@ -40,8 +37,5 @@ header {
         }
     }
     @media (min-width: $medium-screen-size) and (max-width: $desktop-screen-size) {
-        .container {
-          padding: 0 $margin-tablet;
-        }
     }
 }

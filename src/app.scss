@@ -29,6 +29,12 @@ body {
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  @media (max-width: $small-screen-size) {
+      padding: 0 $margin-mobile;
+  }
+  @media (min-width: $medium-screen-size) and (max-width: $desktop-screen-size) {
+      padding: 0 $margin-tablet;
+  }
 }
 
 /* code {
