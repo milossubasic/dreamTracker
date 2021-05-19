@@ -27,7 +27,7 @@ const home = {
         {
             id: 'i3',
             photo: cow2,
-            link: '#',
+            link: 'https://www.biblegateway.com/passage/?search=Genesis%2041&version=CEV',
             altText: 'cow'
         },
         {
