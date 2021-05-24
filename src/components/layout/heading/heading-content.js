@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const HeadingContent = ({ content }) => {
     const { title, subTitle} = content;
     return (
-        <div className='content'>
+        <div className='content centering'>
             <h1>{title}</h1>
             <h3>{subTitle}</h3>
         </div>

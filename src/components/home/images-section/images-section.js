@@ -8,7 +8,7 @@ const ImagesSection = ({ imagesArray }) => {
     return ( 
         <section className='images-section'>
             <div className='container'>
-                <div>
+                <div className='images-section__container'>
                     {imagesArray.map(image => {
                         return <Image key={image.id} imageData={image}/>;
                         })

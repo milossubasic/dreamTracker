@@ -8,7 +8,7 @@ import ivanNastovic from '../images/home/snovi-ivan-nastovic.jpg';
 
 const home = {
     headContent: {
-        title: 'Welcome to the dreamsApp!',
+        title: 'Welcome to the world of dreams!',
         subTitle: 'Dreams can tell us A LOT about ourselves - as famously Froyd once put it: "Dreams are a royal highway to unconscious". They can guide us, they can warn us - predict'
     },
     images: [
