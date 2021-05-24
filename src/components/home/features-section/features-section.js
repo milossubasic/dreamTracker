@@ -6,7 +6,7 @@ import Feature from './feature';
 const FeaturesSection = ({ heading, features }) => {
     return (
         <section>
-            <div className='container'>
+            <div className='container centering'>
                 <h3>{heading}</h3>
                 <ul>
                     {features.map( feature => {

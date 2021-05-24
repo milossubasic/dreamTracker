@@ -1,6 +1,6 @@
 {
-  "short_name": "dreamsApp",
-  "name": "Dreams App",
+  "short_name": "dreamsTracker",
+  "name": "Dreams Tracker",
   "icons": [
     {
       "src": "favicon.ico",
