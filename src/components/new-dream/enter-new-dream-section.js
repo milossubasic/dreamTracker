@@ -33,33 +33,7 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
         } else {
             newDreamPackage[id] = value;
         }
-    }
-
-    // const [ inputTest, setInputTest ] = useState('');
-    // const [ blurCheckFailed, howIsBlurDoing ] = useState(false);
-    
-    // const inputValidity = inputTest.trim() !== '';
-    // const inputValidityWhole = !inputValidity && blurCheckFailed;
-
-    // const titleInputChangeHandler = event => {
-    //     setInputTest(event.target.value);
-
-    // };
-
-    // const blurCheck = () => {
-    //     howIsBlurDoing(true);
-    // }
-
-    // const formSubmissionHandler = event => {
-    //     event.preventDefault();
-    //     howIsBlurDoing(true);
-    //     if (!inputValidityWhole) {
-    //         return;
-    //     }
-    //     console.log(inputTest);
-    //     setInputTest('');
-    //     howIsBlurDoing(false);
-    // };
+    };
 
     const formSubmissionHandler = event => {
         event.preventDefault();
@@ -71,10 +45,10 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
         <section className='END-section'>
             <div className='container'>
                 <form onSubmit={formSubmissionHandler}>
-                    <div className='form-controls'>
+                    <div className='END-section__form-controls'>
                         {formControlsArray.map(el => <FormControl key={el.id} elementData={el} passInputValue={inputValueHandler}/>)}
                     </div>
-                    <div className='form-actions'>
+                    <div className='END-section__form-actions'>
                         <Button>Submit new dream</Button>
                     </div>
                 </form>
