@@ -6,11 +6,12 @@ import DreamsListSection from '../components/list-of-dreams/dreams-list-section'
 import dataListOfDreams from '../data/data-list-of-dreams';
 
 const ListOfDreams = () => {
+    const { headContent, listHeaderColumnNames } = dataListOfDreams;
 
     return (
         <>
-            <Heading content={dataListOfDreams.headContent} />
-            <DreamsListSection />
+            <Heading content={headContent} />
+            <DreamsListSection columnNames={listHeaderColumnNames}/>
         </>
     )
 };

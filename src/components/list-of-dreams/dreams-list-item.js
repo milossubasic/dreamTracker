@@ -7,15 +7,17 @@ import { make_dream_active } from '../../store/actions/actionCreators';
 const DreamsListItem = ({ dreamData, clicked }) => {
     const { description, fullDate, id} = dreamData;
     return (
-        <NavLink to='/dream'>
-            <div className='dreams-list-section__dream' onClick={() => clicked(id)}>
-                <div className='dreams-list-section__date-of-dream'>
-                    <div className='dreams-list-section__day'>{fullDate.day},</div>
-                    <div className='dreams-list-section__date'>{fullDate.date}.</div>
+        <li className='dreams-list-section__list-item' onClick={() => clicked(id)}>
+            <NavLink to='/dream'>
+                <div className='dreams-list-section__dream'>
+                    <div className='dreams-list-section__date-of-dream'>
+                        <div className='dreams-list-section__day'>{fullDate.day},</div>
+                        <div className='dreams-list-section__date'>{fullDate.date}.</div>
+                    </div>
+                    <div className='dreams-list-section__description'>{description}</div>
                 </div>
-                <div className='dreams-list-section__description'>{description}</div>
-            </div>
-        </NavLink>
+            </NavLink>
+        </li>
     );
 };
 
