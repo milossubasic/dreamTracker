@@ -4,24 +4,9 @@ const newDream = {
         subTitle: 'Hooray, you had a new downfall!'
     },
     formControls: [
-        {
-            inputType: 'text',
-            id: 'title',
-            forLabel: 'Title of the dream'
-        },
-        {
-            inputType: 'text',
-            id: 'description',
-            forLabel: 'Description of the the dream for the list'
-        },
-        {
-            inputType: 'text',
-            id: 'content',
-            forLabel: 'Enter the story of the dream'
-        },
         {   
             inputType: 'select',
-            id: 'date',
+            id: 'dat',
             numberOfDays: 31,
             names: [
                 {
@@ -117,6 +102,26 @@ const newDream = {
                     value: 'Sunday'
                 },
             ]
+        },
+        {
+            inputType: 'text',
+            id: 'title',
+            forLabel: 'Title of the dream'
+        },
+        {
+            inputType: 'text',
+            id: 'description',
+            forLabel: 'Description of the the dream for the list'
+        },
+        {
+            inputType: 'text',
+            id: 'content',
+            forLabel: 'Enter the story of the dream'
+        },
+        {
+            inputType: 'date',
+            id: 'date',
+            forLabel: 'Date'
         }
     ]
 };

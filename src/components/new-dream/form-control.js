@@ -5,12 +5,10 @@ const FormControl = ({ elementData, passInputValue }) => {
 
     const inputRef = useRef();
 
+    const defaultDate = new Date();
+
     const inputChangeHandler = () => {
-        if (inputType === 'select') {
-            passInputValue(id, inputRef.current.value, true);
-        } else {
             passInputValue(id, inputRef.current.value);
-        }
     };
 
     let inputElement = null;
@@ -28,6 +26,18 @@ const FormControl = ({ elementData, passInputValue }) => {
                     ref={inputRef}
                 />
             </>
+        );
+        break;
+        case ( 'date' ) : inputElement = (
+                <label htmlFor={id}>{forLabel}
+                <input 
+                    type={inputType} 
+                    id={id} 
+                    onChange={inputChangeHandler}
+                    // onBlur={blurCheck} 
+                    ref={inputRef}
+                />
+                </label>
         );
         break;
         case ( 'select' ) : inputElement = (

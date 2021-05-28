@@ -1,3 +1,8 @@
 .END-section {
-
+    &__form-control {
+        .END-section__select-control {
+            display: inline;
+            border: 1px solid red;
+        }
+    }
 }
