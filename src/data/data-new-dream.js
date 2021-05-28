@@ -4,104 +4,10 @@ const newDream = {
         subTitle: 'Hooray, you had a new downfall!'
     },
     formControls: [
-        {   
-            inputType: 'select',
-            id: 'dat',
-            numberOfDays: 31,
-            names: [
-                {
-                    id: '',
-                    value: ''
-                }
-            ]
-        },
         {
-            inputType: 'select',
-            id: 'month',
-            names: [
-                {
-                    id: 'mID1',
-                    value: 'January'
-                },
-                {
-                    id: 'mID2',
-                    value: 'February'
-                },
-                {
-                    id: 'mID3',
-                    value: 'March'
-                },
-                {
-                    id: 'mID4',
-                    value: 'April'
-                },
-                {
-                    id: 'mID5',
-                    value: 'May'
-                },
-                {
-                    id: 'mID6',
-                    value: 'Juny'
-                },
-                {
-                    id: 'mID7',
-                    value: 'July'
-                },
-                {
-                    id: 'mID8',
-                    value: 'August'
-                },
-                {
-                    id: 'mID9',
-                    value: 'September'
-                },
-                {
-                    id: 'mID10',
-                    value: 'October'
-                },
-                {
-                    id: 'mID11',
-                    value: 'November'
-                },
-                {
-                    id: 'mID12',
-                    value: 'December'
-                }
-            ]
-        },
-        {
-            inputType: 'select',
-            id: 'day',
-            names: [
-                {
-                    id: 'dID1',
-                    value: 'Monday'
-                },
-                {
-                    id: 'dID2',
-                    value: 'Tuesday'
-                },
-                {
-                    id: 'dID3',
-                    value: 'Wednesday'
-                },
-                {
-                    id: 'dID4',
-                    value: 'Thursday'
-                },
-                {
-                    id: 'dID5',
-                    value: 'Friday'
-                },
-                {
-                    id: 'dID6',
-                    value: 'Saturday'
-                },
-                {
-                    id: 'dID7',
-                    value: 'Sunday'
-                },
-            ]
+            inputType: 'date',
+            id: 'date',
+            forLabel: 'Date'
         },
         {
             inputType: 'text',
@@ -117,11 +23,6 @@ const newDream = {
             inputType: 'text',
             id: 'content',
             forLabel: 'Enter the story of the dream'
-        },
-        {
-            inputType: 'date',
-            id: 'date',
-            forLabel: 'Date'
         }
     ]
 };

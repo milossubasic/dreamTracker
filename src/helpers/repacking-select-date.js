@@ -1,4 +1,7 @@
 
+// so in the meantime this helper completly lost it's use,
+// but I'm going to keep it here for a while
+
 const repackingSelectDate = objects => {
     let arrayHelper = [];
 

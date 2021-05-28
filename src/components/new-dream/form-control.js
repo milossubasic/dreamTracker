@@ -1,11 +1,9 @@
 import React, { useRef } from 'react';
 
 const FormControl = ({ elementData, passInputValue }) => {
-    const { inputType, id, forLabel, names } = elementData;
+    const { inputType, id, forLabel } = elementData;
 
     const inputRef = useRef();
-
-    const defaultDate = new Date();
 
     const inputChangeHandler = () => {
             passInputValue(id, inputRef.current.value);
@@ -29,21 +27,16 @@ const FormControl = ({ elementData, passInputValue }) => {
         );
         break;
         case ( 'date' ) : inputElement = (
-                <label htmlFor={id}>{forLabel}
-                <input 
-                    type={inputType} 
-                    id={id} 
-                    onChange={inputChangeHandler}
-                    // onBlur={blurCheck} 
-                    ref={inputRef}
-                />
+                <label>
+                    {forLabel}
+                    <input 
+                        type={inputType} 
+                        id={id} 
+                        onChange={inputChangeHandler}
+                        // onBlur={blurCheck} 
+                        ref={inputRef}
+                    />
                 </label>
-        );
-        break;
-        case ( 'select' ) : inputElement = (
-            <select ref={inputRef} onChange={inputChangeHandler}>
-            {names.map(element => <option key={element.id} value={element.value} >{element.value}</option>)}
-        </select>
         );
         break;
         default : prompt('something is freaking wrong');
