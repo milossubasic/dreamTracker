@@ -16,21 +16,6 @@
         margin-bottom: 5px;
         font-weight: 700;
     }
-    &__input {
-        padding: 10px;
-        &--date,
-        &--title {
-            height: 40px;
-        }
-        &--story {
-            width: 700px;
-            height: 300px;
-        }
-        &--summary {
-            width: 400px;
-            height: 60px;
-        }
-    }
     &__hint {
         vertical-align: top;
         width: 140px;
@@ -38,12 +23,51 @@
         font-size: 10px;
         line-height: 10px;
     }
+    &__input {
+        padding: 10px;
+        &--date,
+        &--title {
+            height: 40px;
+        }
+        &--summary {
+            width: 400px;
+            height: 60px;
+        }
+        &--story {
+            max-width: 700px;
+            height: 300px;
+        }
+    }
     &__form-actions {
         margin-left: 200px;
     }
     @media (max-width: $small-screen-size) {
         &__form-control {
             flex-direction: column;
+            &:not(:last-child){
+                margin-bottom: 20px;
+            }
+        }
+        &__label {
+            margin-bottom: 2px;
+        }
+        &__hint {
+            margin-bottom: 8px;
+        }
+        &__input {
+            padding: 3px;
+            &--date,
+            &--title {
+                height: 30px;
+            }
+            &--summary {
+                width: 400px;
+                height: 40px;
+            }
+    
+        }
+        &__form-actions {
+            margin-left: 0;
         }        
     }
 }
