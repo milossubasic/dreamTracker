@@ -12,10 +12,10 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
     const dateDefaultValue = currentDate.toISOString().split('T')[0];
 
     const newDreamPackage = {
-        content: '',
-        description: '',
+        date: dateDefaultValue,
         title: '',
-        date: dateDefaultValue
+        summary: '',
+        story: ''
     };
 
     const inputValueHandler = (id, value) => {
@@ -49,7 +49,9 @@ EnterNewDreamSection.propTypes = {
         PropTypes.shape({
             inputType: PropTypes.string.isRequired,
             id: PropTypes.string.isRequired,
-            forLabel: PropTypes.string.isRequired
+            labelText: PropTypes.string.isRequired,
+            placeholderText: PropTypes.string,
+            hintText: PropTypes.string
         })
     )
 };

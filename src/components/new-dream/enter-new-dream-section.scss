@@ -1,8 +1,49 @@
+@import '../../styles/colors.scss';
+@import '../../styles/dimensions.scss';
+
 .END-section {
     &__form-control {
-        .END-section__select-control {
-            display: inline;
-            border: 1px solid red;
+        display: flex;
+        &:not(:last-child){
+            margin-bottom: 15px;
         }
+    }
+    &__legend {
+        width: 200px;
+    }
+    &__label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+    &__input {
+        padding: 10px;
+        &--date,
+        &--title {
+            height: 40px;
+        }
+        &--story {
+            width: 700px;
+            height: 300px;
+        }
+        &--summary {
+            width: 400px;
+            height: 60px;
+        }
+    }
+    &__hint {
+        vertical-align: top;
+        width: 140px;
+        color: $black;
+        font-size: 10px;
+        line-height: 10px;
+    }
+    &__form-actions {
+        margin-left: 200px;
+    }
+    @media (max-width: $small-screen-size) {
+        &__form-control {
+            flex-direction: column;
+        }        
     }
 }

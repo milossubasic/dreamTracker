@@ -1,28 +1,33 @@
 
 const newDream = {
     headContent: {
-        subTitle: 'Hooray, you had a new downfall!'
+        subTitle: 'Hooray, you had a new dream! You can use the form below to save it.'
     },
     formControls: [
         {
             inputType: 'date',
             id: 'date',
-            forLabel: 'Date'
+            labelText: 'Date',
         },
         {
             inputType: 'text',
             id: 'title',
-            forLabel: 'Title of the dream'
+            labelText: 'Title',
+            placeholderText: 'Night out',
+            hintText: 'This title will be displayed in detailed view of the dream'
         },
         {
-            inputType: 'text',
-            id: 'description',
-            forLabel: 'Description of the the dream for the list'
+            inputType: 'textArea',
+            id: 'summary',
+            labelText: 'Summary',
+            placeholderText: 'I went out with Ana and had wonderful time, untill Dracula showed up. ',
+            hintText: 'This summery will be displayed in list view of your dreams'
         },
         {
-            inputType: 'text',
-            id: 'content',
-            forLabel: 'Enter the story of the dream'
+            inputType: 'textArea',
+            id: 'story',
+            labelText: 'Dream',
+            placeholderText:'First thing I can remember is that I am looking in mirror and trying to apply red lipstick...'
         }
     ]
 };
