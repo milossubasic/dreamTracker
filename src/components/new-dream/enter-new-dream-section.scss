@@ -10,6 +10,7 @@
     }
     &__legend {
         width: 200px;
+        flex-shrink: 0;
     }
     &__label {
         display: inline-block;
@@ -27,14 +28,16 @@
         padding: 10px;
         &--date,
         &--title {
+            width: 195px;
+            flex-grow: 0;
             height: 40px;
         }
         &--summary {
-            width: 400px;
+            flex: 0 1 400px;
             height: 60px;
         }
         &--story {
-            max-width: 700px;
+            flex: 0 1 700px;
             height: 300px;
         }
     }
@@ -61,10 +64,12 @@
                 height: 30px;
             }
             &--summary {
-                width: 400px;
-                height: 40px;
+                flex-basis: 40px;
+                max-width: 400px;
             }
-    
+            &--story {
+                flex-basis: 500px;
+            }   
         }
         &__form-actions {
             margin-left: 0;
