@@ -20,14 +20,18 @@
     &__hint {
         vertical-align: top;
         width: 140px;
-        color: $black;
         font-size: 10px;
         line-height: 10px;
     }
     &__input {
         padding: 10px;
+        font-family: inherit;
+        background-color: #ccc;
+        border: none;
+        border-radius: 2px;
         &--date,
         &--title {
+            vertical-align: middle;
             width: 195px;
             flex-grow: 0;
             height: 40px;
