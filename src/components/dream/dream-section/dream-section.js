@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 import Button from '../../UI/button/button';
 
 const Dream = ({ theDream }) => {
-    const {content, fullDate, title} = theDream;
+    const {story, date, title} = theDream;
     return ( 
         <>
         <div>
-            <div>{fullDate.date}, {fullDate.day}</div>
+            <div>{date.date}, {date.day}</div>
             <div>{title}</div>
-            <div>{content}</div>
+            <div>{story}</div>
         </div>
         <NavLink to='/list-of-dreams'>
             <Button>Back to list</Button>

@@ -27,8 +27,8 @@ export const dreams_fetching = () => {
         dispatch(dreams_fetching_start());
         axiosFetchDreams.get()
         .then ( response => {
-            const dreamsArray = repackingFetchedDreams(response.data);
-            dispatch(dreams_fetching_success(dreamsArray));
+            const tertiaryDreamArray = repackingFetchedDreams(response.data);
+            dispatch(dreams_fetching_success(tertiaryDreamArray));
         })
         .catch (  error => dispatch(dreams_fetching_error(error.message)) )
     };

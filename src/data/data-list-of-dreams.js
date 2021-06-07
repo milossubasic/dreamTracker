@@ -5,7 +5,7 @@ const listOfDreams = {
     },
     listHeaderColumnNames: {
         column1: 'Date',
-        column2: 'Description'
+        column2: 'Summary'
     }
 }
 

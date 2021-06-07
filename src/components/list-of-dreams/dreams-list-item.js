@@ -5,16 +5,16 @@ import { connect } from 'react-redux';
 import { make_dream_active } from '../../store/actions/actionCreators';
 
 const DreamsListItem = ({ dreamData, clicked }) => {
-    const { description, fullDate, id} = dreamData;
+    const { summary, date, id} = dreamData;
     return (
         <li className='dreams-list-section__list-item' onClick={() => clicked(id)}>
             <NavLink to='/dream'>
                 <div className='dreams-list-section__dream'>
                     <div className='dreams-list-section__date-of-dream'>
-                        <div className='dreams-list-section__day'>{fullDate.day},</div>
-                        <div className='dreams-list-section__date'>{fullDate.date}.</div>
+                        <div className='dreams-list-section__day'>{date.day},</div>
+                        <div className='dreams-list-section__date'>{date.date}.</div>
                     </div>
-                    <div className='dreams-list-section__description'>{description}</div>
+                    <div className='dreams-list-section__description'>{summary}</div>
                 </div>
             </NavLink>
         </li>
@@ -24,11 +24,12 @@ const DreamsListItem = ({ dreamData, clicked }) => {
 DreamsListItem.propTypes = {
     dreamData: PropTypes.shape ({
         id: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        fullDate: PropTypes.shape ({
+        summary: PropTypes.string.isRequired,
+        date: PropTypes.shape ({
+            year: PropTypes.number.isRequired,
+            month: PropTypes.number.isRequired,
             date: PropTypes.number.isRequired,
-            day: PropTypes.string.isRequired,
-            month: PropTypes.number.isRequired
+            day: PropTypes.string.isRequired
         })
     })
 };
