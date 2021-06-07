@@ -1,14 +1,17 @@
+import repackingFetchedDreamsDate from './repacking-fetched-dreams-date';
 
-const repackingFetchedDreams = (dreamsObject) => {
-    const dreamsArray = [];
-    for (const dreamEntry in dreamsObject) {
-        const newDreamsArrayEntry = {
+const repackingFetchedDreams = (primaryDreamsArray) => {
+    const secondaryDreamsArray = [];
+    for (const dreamEntry in primaryDreamsArray) {
+        const newDateObject = repackingFetchedDreamsDate(primaryDreamsArray[dreamEntry].date);
+        primaryDreamsArray[dreamEntry].date = newDateObject;
+        const secondaryDreamsArrayEntry = {
             id: dreamEntry,
-            ...dreamsObject[dreamEntry]
+            ...primaryDreamsArray[dreamEntry]
         };
-        dreamsArray.push(newDreamsArrayEntry);
+        secondaryDreamsArray.push(secondaryDreamsArrayEntry);
     };
-    return dreamsArray;
+    return secondaryDreamsArray;
 };
 
 export default repackingFetchedDreams;
