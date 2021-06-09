@@ -26,7 +26,7 @@
     &__input {
         padding: 10px;
         font-family: inherit;
-        background-color: #ccc;
+        background-color: $silver;
         border: none;
         border-radius: 2px;
         &--date,
@@ -46,6 +46,21 @@
     }
     &__form-actions {
         margin-left: 200px;
+        button {
+            height: 40px;
+            padding: 0 20px;
+            border-radius: 2px;
+            margin-top: 20px;
+            background-color: $silver;
+            border: 0;
+            transition: all .2s;
+        }
+        button:hover {
+            background-color: $gray;    
+        }
+        button:active {
+            outline: 3px solid $blue-lagoon;
+        }
     }
     @media (max-width: $small-screen-size) {
         &__form-control {

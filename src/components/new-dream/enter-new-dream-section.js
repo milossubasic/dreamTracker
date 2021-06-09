@@ -36,7 +36,7 @@ const EnterNewDreamSection = ({ formControlsArray }) => {
                         {formControlsArray.map(el => <FormControl key={el.id} elementData={el} passInputValue={inputValueHandler}/>)}
                     </div>
                     <div className='END-section__form-actions'>
-                        <Button>Submit new dream</Button>
+                        <Button type='submit'>Submit</Button>
                     </div>
                 </form>
             </div>
