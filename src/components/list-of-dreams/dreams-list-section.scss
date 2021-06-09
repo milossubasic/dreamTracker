@@ -7,14 +7,6 @@
     &__list-item {
         margin-bottom: 28px;
         width: fit-content;
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        a:hover,
-        a:active {
-            color: $white;
-        }
     }
     &__header {
         display: flex;
