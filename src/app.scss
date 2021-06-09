@@ -62,6 +62,16 @@ h3 {
   // margin-left: auto;
 }
 
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  cursor: pointer;
+}
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
