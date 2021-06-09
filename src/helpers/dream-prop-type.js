@@ -5,12 +5,13 @@ const dreamPropType = () => {
          {
             theDream: PropTypes.shape({
                 id: PropTypes.string.isRequired,
-                content: PropTypes.string.isRequired,
-                description: PropTypes.string.isRequired,
-                fullDate: PropTypes.shape({
+                story: PropTypes.string.isRequired,
+                summary: PropTypes.string.isRequired,
+                date: PropTypes.shape({
+                    year: PropTypes.number.isRequired,
+                    month: PropTypes.number.isRequired,
                     date: PropTypes.number.isRequired,
-                    day: PropTypes.string.isRequired,
-                    month: PropTypes.number.isRequired
+                    day: PropTypes.string.isRequired
                 }),
                 title: PropTypes.string.isRequired
             })
