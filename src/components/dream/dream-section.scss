@@ -2,7 +2,47 @@
 @import '../../styles/dimensions.scss';
 
 .dream-section {
+    //border: 1px solid red;
+    .container {
+        //border: 1px solid blue;
+        max-width: 1000px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: $black;
+    }
     &__date {
-        margin-bottom: 30px;
+        margin: 40px 0;
+    }
+    &__story {
+        width: 750px;
+        font-size: 20px;
+    }
+    &__navigation {
+        margin-top: 30px;
+        //border: 1px solid blue;
+        width: 750px;
+        a {
+            color: $white;
+            padding-bottom: 5px;
+            transition: all .3s;
+            //border: 1px solid red;
+        }
+        a:hover {
+            border-bottom: 1px solid currentColor;
+        }
+    }
+    @media (max-width: $small-screen-size) {
+        &__story, &__navigation {
+            width: 100%;
+        }
+    }
+    @media (min-width: $medium-screen-size) and (max-width: $desktop-screen-size) {
+        .container {
+            max-width: 850px;
+        }
+        &__story, &__navigation {
+            width: 650px;
+        }
     }
 }

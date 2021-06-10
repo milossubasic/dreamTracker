@@ -21,7 +21,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-color: $shark;
-    color: rgb(87, 84, 84)
+    color: $emperor;
 }
 
 section {
@@ -43,7 +43,8 @@ h3 {
 
 h4 {
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
 
 a {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const DreamNavigation = () => {
+const DreamNavigation = ({ backLinkText }) => {
     return (
         <NavLink to='/list-of-dreams'>
-            Back to list
+            &larr;{ backLinkText }
         </NavLink>
     );
 }
