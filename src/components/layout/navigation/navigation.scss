@@ -18,15 +18,6 @@ header {
             &:not(:last-child) {
                 margin-right: 20px;
             }
-            a {
-                color: inherit;
-                text-decoration: none;
-            }
-            a:hover,
-            a:active,
-            a.current {
-                color: $white;
-            }
         }
     }
     @media (max-width: $small-screen-size) {

@@ -1,7 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const DreamNavigation = () => {
-    return ( <div>This is dream navigation - bitch!</div> );
+const DreamNavigation = ({ backLinkText }) => {
+    return (
+        <NavLink to='/list-of-dreams'>
+            &larr;{ backLinkText }
+        </NavLink>
+    );
 }
  
 export default DreamNavigation;

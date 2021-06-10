@@ -21,7 +21,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-color: $shark;
-    color: rgb(87, 84, 84)
+    color: $emperor;
 }
 
 section {
@@ -39,6 +39,22 @@ h3 {
   margin-bottom: 10px;
   line-height: 20px;
   max-width: 800px;
+}
+
+h4 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a.current {
+    color: $white;
 }
 
 .container {
