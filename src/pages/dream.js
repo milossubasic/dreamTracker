@@ -13,7 +13,7 @@ const Dream = ({ theDream }) => {
 
 const mapStateToProps = state => {
     return {
-        theDream: state.activeDream
+        theDream: state.dreams.activeDream
     }
 };
 

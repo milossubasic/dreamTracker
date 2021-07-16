@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { make_dream_active } from '../../store/actions/actionCreators';
+import { make_dream_active } from '../../store/actions/dreams-reducer-actions/actionCreators';
 
 const DreamsListItem = ({ dreamData, clicked }) => {
     const { summary, date, id} = dreamData;

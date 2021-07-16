@@ -1,7 +1,7 @@
-import * as actions from '../actions/action-types';
+import * as actions from '../actions/dreams-reducer-actions/action-types';
 
 const initialState = {
-    dreams: [],
+    dreamsList: [],
     loading: false,
     error: null,
     activeDream: null
@@ -17,7 +17,7 @@ const dreamsReducer = ( state=initialState, action ) => {
         case actions.DREAMS_FETCHING_SUCCESS:
             return {
                 ...state,
-                dreams: action.dreams,
+                dreamsList: action.dreams,
                 loading: false
             };
         case actions.DREAMS_FETCHING_ERROR:
@@ -27,7 +27,7 @@ const dreamsReducer = ( state=initialState, action ) => {
                 error: action.error
             };
         case actions.MAKE_DREAM_ACTIVE:
-            const neededDream = state.dreams.find( dream => dream.id === action.dreamID );
+            const neededDream = state.dreamsList.find( dream => dream.id === action.dreamID );
             return {
                 ...state,
                 activeDream: neededDream

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as actionCreator from '../../store/actions/actionCreators';
+import * as actionCreator from '../../store/actions/dreams-reducer-actions/actionCreators';
 import { connect } from 'react-redux';
 
 import './dreams-list-section.scss';
@@ -37,9 +37,9 @@ class DreamListSection extends Component {
 
 const mapStateToProps = state => {
     return {
-        dreams: state.dreams,
-        loading: state.loading,
-        error: state.error
+        dreams: state.dreams.dreamsList,
+        loading: state.dreams.loading,
+        error: state.dreams.error
     };
 };
 
