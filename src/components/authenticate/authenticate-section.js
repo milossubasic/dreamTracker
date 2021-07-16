@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './authenticate-section.scss';
 
 import PropTypes from 'prop-types';
-import axios from '../../Adapters/axios/axios-fetch-dreams';
+import axiosAuth from '../../Adapters/axios/axios-auth';
 
 import Button from '../UI/button/button';
-//import FormControl from './form-control';
+import FormControl from '../new-dream/form-control';
 
 import apiKey from '../../config/globals/apiKey';
 
-const AuthenticateSection = ({ formControlsArray }) => {
+const AuthenticateSection = ({ authFormControls }) => {
 
     const [isLogin, setIsLogin] = useState(true);
     const authInputPackage = {
@@ -31,11 +31,12 @@ const AuthenticateSection = ({ formControlsArray }) => {
         } else {
             url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
         }
-        axios.post(url, authInputPackage);
+        axiosAuth.post(url, authInputPackage)
+        .then(resp => console.log(resp.data))
+        .catch(error => console.log(error.message));
     };
 
     const actionHandler = event => {
-        //event.preventDefault();
         setIsLogin(!isLogin);
     };
 
@@ -43,8 +44,8 @@ const AuthenticateSection = ({ formControlsArray }) => {
         <section className='auth-section'>
             <div className='container'>
                 <form onSubmit={formSubmissionHandler}>
-                    <div className='END-section__form-controls'>
-                        {/* {formControlsArray.map(el => <FormControl key={el.id} elementData={el} passInputValue={inputValueHandler}/>)} */}
+                    <div className='auth-section__form-controls'>
+                        {authFormControls.map(el => <FormControl key={el.id} elementData={el} passInputValue={inputValueHandler}/>)}
                     </div>
                     <div className='END-section__form-actions'>
                         <Button type='submit'>

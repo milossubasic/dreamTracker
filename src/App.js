@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import Layout from './components/layout/layout';
 
 import Index from './pages/index';
-import Auth from './pages/Auth';
+import Auth from './pages/auth';
 import ListOfDreams from './pages/list-of-dreams';
 import Dream from './pages/dream';
 import NewDream from './pages/new-dream';

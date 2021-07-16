@@ -15,6 +15,8 @@ const FormControl = ({ elementData, passInputValue }) => {
     switch(inputType) {
         case ( 'text' ) :
         case ( 'date' ) : 
+        case ( 'email' ) : 
+        case ( 'password' ) : 
         inputElement = (
                     <input 
                         type={inputType} 
