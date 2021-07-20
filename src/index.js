@@ -5,14 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import dreamsReducer from './store/reducers/dreamsReducer';
-//import authReducer from './store/reducers/authReducer';
+import authReducer from './store/reducers/authReducer';
 import thunk from 'redux-thunk'
 
 import App from './App';
 
 const rootReducer = combineReducers({
-  dreams: dreamsReducer
-  //auth: authReducer
+  dreams: dreamsReducer,
+  auth: authReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

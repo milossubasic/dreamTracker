@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import './authenticate-section.scss';
 
 import PropTypes from 'prop-types';
-import axiosAuth from '../../Adapters/axios/axios-auth';
+//import axiosAuth from '../../Adapters/axios/axios-auth';
+
+import { authentication } from '../../store/actions/auth-reducer-actions/auth-action-creators';
+import { connect } from 'react-redux';
 
 import Button from '../UI/button/button';
 import FormControl from '../new-dream/form-control';
 
 import apiKey from '../../config/globals/apiKey';
 
-const AuthenticateSection = ({ authFormControls }) => {
+const AuthenticateSection = ({ authFormControls, onSubmitDispatch }) => {
 
     const [isLogin, setIsLogin] = useState(true);
     const authInputPackage = {
@@ -31,9 +34,7 @@ const AuthenticateSection = ({ authFormControls }) => {
         } else {
             url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
         }
-        axiosAuth.post(url, authInputPackage)
-        .then(resp => console.log(resp.data))
-        .catch(error => console.log(error.message));
+        onSubmitDispatch(url, authInputPackage);
     };
 
     const actionHandler = event => {
@@ -59,6 +60,8 @@ const AuthenticateSection = ({ authFormControls }) => {
     );
 };
 
+
+
 // EnterNewDreamSection.propTypes = {
 //     formControlsArray: PropTypes.arrayOf (
 //         PropTypes.shape({
@@ -71,5 +74,10 @@ const AuthenticateSection = ({ authFormControls }) => {
 //     )
 // };
 
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmitDispatch: (url, inputPackage) => dispatch(authentication(url, inputPackage))
+    };
+};
 
-export default AuthenticateSection;
+export default connect(null, mapDispatchToProps)(AuthenticateSection);
