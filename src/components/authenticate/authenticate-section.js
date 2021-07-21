@@ -51,7 +51,10 @@ const AuthenticateSection = ({ authFormControls, onSubmitDispatch }) => {
                         <Button type='submit'>
                             {isLogin ? 'Login' : 'Create new account'}
                         </Button>
-                        <button type='button' onClick={actionHandler}> {isLogin ? 'Create new account' : 'Login'} </button>
+                        <p>OR</p>
+                        <Button type='button' clickAction={actionHandler}> 
+                            {isLogin ? 'Create new account' : 'Login'}
+                        </Button>
                     </div>
                 </form>
             </div>
