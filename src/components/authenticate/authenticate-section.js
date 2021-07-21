@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './authenticate-section.scss';
 
 import PropTypes from 'prop-types';
-//import axiosAuth from '../../Adapters/axios/axios-auth';
 
 import { authentication } from '../../store/actions/auth-reducer-actions/auth-action-creators';
 import { connect } from 'react-redux';
@@ -62,17 +61,15 @@ const AuthenticateSection = ({ authFormControls, onSubmitDispatch }) => {
 
 
 
-// EnterNewDreamSection.propTypes = {
-//     formControlsArray: PropTypes.arrayOf (
-//         PropTypes.shape({
-//             inputType: PropTypes.string.isRequired,
-//             id: PropTypes.string.isRequired,
-//             labelText: PropTypes.string.isRequired,
-//             placeholderText: PropTypes.string,
-//             hintText: PropTypes.string
-//         })
-//     )
-// };
+AuthenticateSection.propTypes = {
+    authFormControls: PropTypes.arrayOf (
+        PropTypes.shape({
+            inputType: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            labelText: PropTypes.string.isRequired,
+        })
+    )
+};
 
 const mapDispatchToProps = dispatch => {
     return {
