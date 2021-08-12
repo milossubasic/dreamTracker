@@ -2,6 +2,10 @@ import * as actions from './auth-action-types';
 
 import axiosAuth from '../../../Adapters/axios/axios-auth';
 
+import message from '../../../data/data-auth';
+
+const authSuccessMessage = message.authSuccessMessage;
+
 const authentication_start = () => {
     return {
         type: actions.AUTHENTICATION_START
@@ -29,6 +33,7 @@ export const authentication = (url, inputPackage) => {
         .then(resp => {
             console.log(resp.data);
             dispatch(authentication_success(resp.data.idToken));
+            alert(authSuccessMessage);
         })
         .catch(error => {
             console.log(error.message);
