@@ -5,20 +5,23 @@ import routes from '../../../config/globals/routes';
 import NavItem from './nav-item';
 import Button from '../../UI/button/button';
 
-const NavBar = ({ authenticated }) => {
+const NavBar = ({ isAuthenticated }) => {
     return (
         <ul className='navigation__list'>
             {routes.map(route => {
+                if ( isAuthenticated && route.name === 'Login' ){
+                    return null;
+                }
                 return <NavItem key={route.name} routeData={route} />;
             })}
-            {authenticated && <li><Button>Logout</Button></li>}
+            {isAuthenticated && <li><Button>Logout</Button></li>}
         </ul>
     );
 };
 
 const mapStateToProps = state => {
     return {
-        authenticated: state.auth.isLogged
+        isAuthenticated: state.auth.isLogged
     };
 };
  
