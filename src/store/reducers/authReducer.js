@@ -12,14 +12,16 @@ const authReducer = ( state=authInitialState, action ) => {
         case actions.AUTHENTICATION_START:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: null
             };
         case actions.AUTHENTICATION_SUCCESS:
             return {
                 ...state,
                 token: action.token,
                 isLogged: true,
-                loading: false
+                loading: false,
+                error: null
             };
         case actions.AUTHENTICATION_ERROR:
             return {

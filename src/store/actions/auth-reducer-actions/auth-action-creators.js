@@ -38,6 +38,7 @@ export const authentication = (url, inputPackage) => {
         .catch(error => {
             console.log(error.message);
             dispatch(authentication_error(error));
+            alert(`Untill I do a proper modal this will have to do... so there was a problem, and this problem is: ${error.message}`);
         });
     }
 }
