@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
+# Available Scripts
 In the project directory, you can run:
 
-### `yarn start`
+`yarn start`
+`yarn test`
+`yarn build`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Styles
+We are going with scss.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Styling is not done for each component – it is basically done for larger parts, usually a page will have styling in one file for all of components that are used for the page.
 
-### `yarn test`
+Basic style settings are in file src/app.scss.
+In this file we have general reset and also reset for some elements for some elements (h1, h3, button…).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Under src there is folder 'styles' with files 'colors' and 'dimensions'.
+We import these files where we need them so we can use sass variables.
 
-### `yarn build`
+New color gets a name via this website https://chir.ag/projects/name-that-color.
+Sort names of the colors alphabetically, ascending.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+'dimensions' file: it holds dimension for class 'container'; all the content is placed in div with this class; rest of definition of this class can be found in src/app.scss (basically max-width is 1100px, left and right margin auto, position is relative).
+Beside class 'container' in 'dimensions' file there is padding for 3 types of devices, and widths for media queries.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Routing
+Routing is done via react-router.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Definitions for routes are stored under src/config/globals/routes.
 
-### `yarn eject`
+This array is imported in component and is listed with map.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+All routes are wrapped in Layout component (which provides navigation, main and footer), and this is done in file src/App.js.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Server communication
+Axios is used. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Under src/adapters/axios there are axios instances… meh, this is still very unstructured.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Global state management
+Global state is managed via Redux and Thunk is used for Async parts. All the settings are in src/store.
 
-## Learn More
+There are 2 reducers, one for dreams and one for authentication.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The one for dreams holds the state of fetched dreams which is used to display dreams under Dreams page. This state is also used in components dreams-list-sections.js and dreams-list-item.js.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If user wants to see details of a dream this is passed around components via this reducer. Page that uses this information is dream.js.
 
-### Code Splitting
+This reducer also holds state considering should loader spinner be activated, and if there is an error.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+State in authentication reducer is responsible for giving a user access to appropriate pages/functions. This reducer holds state for spinner and error.
