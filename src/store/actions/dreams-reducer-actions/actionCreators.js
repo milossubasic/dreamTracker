@@ -1,6 +1,6 @@
 import * as actions from './action-types';
-import axiosFetchDreams from '../../Adapters/axios/axios-fetch-dreams';
-import repackingFetchedDreams from '../../helpers/repacking-fetched-dreams';
+import axiosFetchDreams from '../../../Adapters/axios/axios-fetch-dreams';
+import repackingFetchedDreams from '../../../helpers/repacking-fetched-dreams';
 
 const dreams_fetching_start = () => {
     return {
