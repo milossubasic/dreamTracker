@@ -4,7 +4,9 @@ import axiosAuth from '../../../Adapters/axios/axios-auth';
 
 import message from '../../../data/data-auth';
 
-const authSuccessMessage = message.authSuccessMessage;
+
+const { authSuccessMessage, authError, logoutMessage } = message;
+
 
 const authentication_start = () => {
     return {
@@ -34,11 +36,25 @@ export const authentication = (url, inputPackage) => {
             console.log(resp.data);
             dispatch(authentication_success(resp.data.idToken));
             alert(authSuccessMessage);
+
         })
         .catch(error => {
             console.log(error.message);
             dispatch(authentication_error(error));
-            alert(`Untill I do a proper modal this will have to do... so there was a problem, and this problem is: ${error.message}`);
+            alert(`${authError}${error.message}`);
         });
+    }
+};
+
+const authentication_logout = () => {
+    return {
+        type: actions.AUTHENTICATION_LOGOUT,
+    };
+};
+
+export const logout = () => {
+    return dispatch => {
+        dispatch(authentication_logout());
+        alert(logoutMessage);
     }
 }

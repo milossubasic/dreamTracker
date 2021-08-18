@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './authenticate-section.scss';
 
 import PropTypes from 'prop-types';
@@ -11,9 +12,19 @@ import FormControl from '../new-dream/form-control';
 
 import apiKey from '../../config/globals/apiKey';
 
-const AuthenticateSection = ({ authFormControls, onSubmitDispatch }) => {
+const AuthenticateSection = ({ authFormControls, onSubmitDispatch, isAuthenticated }) => {
 
-    const [isLogin, setIsLogin] = useState(true);
+    
+    const history = useHistory();
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            history.replace('/list-of-dreams');
+        }
+    }, [isAuthenticated, history]);
+
+    const [isLogin, setIsLogin] = useState(false)
+    
     const authInputPackage = {
         email: '',
         password: '',
@@ -74,10 +85,16 @@ AuthenticateSection.propTypes = {
     )
 };
 
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.isLogged
+    };
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         onSubmitDispatch: (url, inputPackage) => dispatch(authentication(url, inputPackage))
     };
 };
 
-export default connect(null, mapDispatchToProps)(AuthenticateSection);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthenticateSection);
