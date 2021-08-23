@@ -22,6 +22,9 @@ header {
             &:not(:last-child) {
                 margin-right: 20px;
             }
+            a {
+                transition: all 0.2s;
+            }
         }
     }
     @media (max-width: $small-screen-size) {

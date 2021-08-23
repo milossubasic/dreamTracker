@@ -18,6 +18,6 @@ const Navigation = () => {
             </div>
         </header>
     );
-}
+};
  
 export default Navigation;
