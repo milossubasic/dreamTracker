@@ -90,6 +90,7 @@
             width: 30px;
             height: 4px;
             background-color: $black;
+            transition: all 0.2s;
         }
         &::before,
         &::after {
