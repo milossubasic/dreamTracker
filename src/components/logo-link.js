@@ -9,6 +9,6 @@ const LogoLink = () => {
             <img src={logo} alt='Logo' className='navigation__logo'/>
         </NavLink>
     );
-}
+};
  
 export default LogoLink;

@@ -19,6 +19,6 @@ const HambrugerMenu = () => {
             </nav>
         </div>
     );
-}
+};
  
 export default HambrugerMenu;
