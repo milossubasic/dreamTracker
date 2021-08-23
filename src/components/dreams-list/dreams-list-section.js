@@ -8,7 +8,7 @@ import './dreams-list-section.scss';
 import DreamListItem from './dreams-list-item';
 import DreamsListHeader from './dreams-list-header';
 
-class DreamListSection extends Component {
+class DreamsListSection extends Component {
 
     componentDidMount() {
         this.props.onDidMount();
@@ -35,7 +35,15 @@ class DreamListSection extends Component {
     };
 };
 
-
+// .propTypes = {
+//     heading: PropTypes.string.isRequired,
+//     features: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.string.isRequired,
+//             feature: PropTypes.string.isRequired
+//         })
+//     )
+// };
 
 const mapStateToProps = state => {
     return {
@@ -51,4 +59,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
  
-export default connect(mapStateToProps, mapDispatchToProps)(DreamListSection);
+export default connect(mapStateToProps, mapDispatchToProps)(DreamsListSection);

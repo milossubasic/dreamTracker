@@ -1,5 +1,5 @@
 
-const listOfDreams = {
+const dreamsList = {
     headContent: {
         subTitle: 'This is the list of your dreams mate:'
     },
@@ -9,4 +9,4 @@ const listOfDreams = {
     }
 }
 
-export default listOfDreams;
+export default dreamsList;
