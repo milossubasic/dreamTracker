@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import * as actionCreator from '../../store/actions/dreams-reducer-actions/actionCreators';
 import { connect } from 'react-redux';
@@ -35,15 +36,15 @@ class DreamsListSection extends Component {
     };
 };
 
-// .propTypes = {
-//     heading: PropTypes.string.isRequired,
-//     features: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             id: PropTypes.string.isRequired,
-//             feature: PropTypes.string.isRequired
-//         })
-//     )
-// };
+DreamsListSection.propTypes = {
+    onDidMount: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    dreams: PropTypes.array.isRequired,
+    columnNames: PropTypes.shape({
+                    column1: PropTypes.string.isRequired,
+                    column2: PropTypes.string.isRequired
+                })
+};
 
 const mapStateToProps = state => {
     return {

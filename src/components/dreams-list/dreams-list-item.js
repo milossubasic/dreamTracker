@@ -31,7 +31,8 @@ DreamsListItem.propTypes = {
             date: PropTypes.number.isRequired,
             day: PropTypes.string.isRequired
         })
-    })
+    }),
+    clicked: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => {
